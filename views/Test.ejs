@@ -1,0 +1,34 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+</head>
+<body>
+  <h1>Test yourself</h1>
+  <ul>
+
+  <% for(elem of contenu) { %>
+      <% if (elem.id == a) { %>
+          <p>How do you say <strong><%= elem.français %> </strong> in English?</p>
+          
+          <form action="/check" method="POST">
+              <input type="hidden" name="correct" value="<%= elem.anglais %>">
+              <label for="anglais">Réponse:</label>
+              <input type="text" id="anglais" name="anglais" />
+              <input type="submit" />
+              </form>
+
+          
+
+      <% } %>
+  <% } %>
+
+        <li><form action="/add" method="POST">
+          <p>ajouter un mot de vocabulaire</p>
+          <label for="anglais">anglais</label>
+          <input type="text" id="anglais" name="anglais" />
+          <label for="français">français</label>
+          <input type="text" id="français" name="français" />
+          <input type="submit" />
+        </form></li></ul>
+</body>
+</html>

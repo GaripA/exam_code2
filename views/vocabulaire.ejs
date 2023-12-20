@@ -1,0 +1,23 @@
+<head>
+
+
+<meta charset="UTF-8">
+<title>Vocabulaire</title>
+</head>
+<h1>Liste des mots de vocabulaire</h1>
+<ul>
+  <% for(elem of contenu) { %>
+   
+    <li><%= elem.français %> - <%= elem.anglais %><a href="/delete/<%= elem.id %>">Delete</a></li>
+  <% } %>
+
+</ul>
+<form action="/add" method="POST">
+
+  <label for="anglais">anglais</label>
+  <input type="text" id="anglais" name="anglais" />
+  <label for="français">français</label>
+  <input type="text" id="français" name="français" />
+  <input type="submit" />
+</form>
+</html>
