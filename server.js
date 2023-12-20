@@ -34,6 +34,10 @@ app.get("/", async function (req, res) {
       
   res.render('Test.ejs', {contenu,a});
 });
+app.get("/delete/:id", async function (req, res) {
+  await Vocabulaire.delete({ id: req.params.id });
+  res.redirect('/');
+});
 app.post("/add", async function (req, res) {
   //le premier task est la variable créée au dessus, le seond designe la collonne
   
