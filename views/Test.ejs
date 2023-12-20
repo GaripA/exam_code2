@@ -29,6 +29,17 @@
           <label for="français">français</label>
           <input type="text" id="français" name="français" />
           <input type="submit" />
-        </form></li></ul>
+        </form></li>
+      
+      <li><h2>Liste des mots </h2>
+      
+        <% for(elem of contenu) { %>
+   
+          <li><%= elem.français %> - <%= elem.anglais %><a href="/delete/<%= elem.id %>">Delete</a></li>
+        <% } %>
+      </li>
+      </ul>
+
+
 </body>
 </html>
